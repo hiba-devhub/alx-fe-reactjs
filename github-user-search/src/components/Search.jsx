@@ -42,6 +42,10 @@ function Search() {
       setHasMore(response.items.length === 30 && response.total_count > 30);
     } catch (error) {
       setError(true);
+      // In production, you might want to log errors to a service
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Search error:', error);
+      }
     } finally {
       setLoading(false);
     }
@@ -60,6 +64,9 @@ function Search() {
       setHasMore(response.items.length === 30 && searchResults.length + response.items.length < response.total_count);
     } catch (error) {
       setError(true);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Load more error:', error);
+      }
     } finally {
       setLoading(false);
     }

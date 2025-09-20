@@ -41,8 +41,6 @@ export const searchUsers = async (searchParams, page = 1, perPage = 30) => {
       throw new Error('No search criteria provided');
     }
     
-    console.log('Search query:', query); // Debug log
-    
     const searchUrl = 'https://api.github.com/search/users';
     const response = await axios.get(searchUrl, {
       params: {
@@ -52,11 +50,8 @@ export const searchUsers = async (searchParams, page = 1, perPage = 30) => {
       }
     });
     
-    console.log('Search response:', response.data); // Debug log
-    
     return response.data;
   } catch (error) {
-    console.error('Search error:', error); // Debug log
     throw error;
   }
 };
