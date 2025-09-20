@@ -1,0 +1,65 @@
+.user-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  margin: 0 0 5px 0;
+  font-size: 24px;
+  color: #24292f;
+}
+
+.user-username {
+  margin: 0 0 10px 0;
+  color: #656d76;
+  font-size: 18px;
+}
+
+.user-bio {
+  margin: 10px 0;
+  color: #24292f;
+  line-height: 1.5;
+}
+
+.user-stats {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.stat {
+  color: #656d76;
+  font-size: 14px;
+}
+
+.profile-link {
+  display: inline-block;
+  background-color: #0366d6;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.profile-link:hover {
+  background-color: #0256cc;
+}
