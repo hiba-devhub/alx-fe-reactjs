@@ -30,8 +30,33 @@ const RecipeDetails = () => {
       </Link>
       
       <div style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '20px', marginBottom: '20px' }}>
-        <h1 style={{ color: '#333', marginBottom: '10px' }}>{recipe.title}</h1>
-        <p style={{ color: '#666', fontSize: '16px', lineHeight: '1.6' }}>{recipe.description}</p>
+        <h1 style={{ color: '#333', marginBottom: '15px' }}>{recipe.title}</h1>
+        <p style={{ color: '#666', fontSize: '16px', lineHeight: '1.6', marginBottom: '20px' }}>
+          {recipe.description}
+        </p>
+        
+        {/* Additional Recipe Details */}
+        <div style={{ marginBottom: '20px' }}>
+          {recipe.ingredients && recipe.ingredients.length > 0 && (
+            <div style={{ marginBottom: '15px' }}>
+              <h3 style={{ color: '#333', fontSize: '18px', marginBottom: '8px' }}>Ingredients:</h3>
+              <ul style={{ color: '#666', fontSize: '14px', lineHeight: '1.5', paddingLeft: '20px' }}>
+                {recipe.ingredients.map((ingredient, index) => (
+                  <li key={index} style={{ marginBottom: '4px' }}>{ingredient}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          
+          {recipe.cookingTime && (
+            <div style={{ marginBottom: '15px' }}>
+              <h3 style={{ color: '#333', fontSize: '18px', marginBottom: '8px' }}>Cooking Time:</h3>
+              <p style={{ color: '#666', fontSize: '16px', margin: '0' }}>
+                🕒 {recipe.cookingTime} minutes
+              </p>
+            </div>
+          )}
+        </div>
         
         <div style={{ marginTop: '20px', display: 'flex', gap: '10px', alignItems: 'center' }}>
           <DeleteRecipeButton recipeId={recipe.id} />
