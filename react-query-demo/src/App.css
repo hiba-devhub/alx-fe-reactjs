@@ -1,0 +1,28 @@
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+/* Hover effect for post cards */
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Button hover effect */
+button:hover:not(:disabled) {
+  background-color: #0056b3 !important;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
